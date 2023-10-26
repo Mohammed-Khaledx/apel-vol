@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="master.css" />
+    <script src="main.js"></script>
+    <title>APEL</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="avatar">
+        <img src="apel.svg" alt="" class="logo">
+      </div>
+      <div class="title">APEL</div>
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Arabic name</span>
+            <input type="text" name="arabicName" placeholder="Full name in Arabic" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">English Name</span>
+            <input type="text" name="englishName"  placeholder="Full name in English" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name ="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Phone number</span>
+            <input
+              type="text" name="phone"
+              placeholder="Enter your mobile number"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details" name = nationalId>National ID</span>
+            <input type="text" placeholder="Enter your national ID" required />
+          </div>
+
+          <div class="input-box">
+            <span class="details">University</span>
+            <input
+              type="text" name="university"
+              placeholder="Enter your University name"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Academic year</span>
+
+            <select  name="University" id="" >
+              <option value="">--Please choose an option--</option>
+              <option value="0">Prep year</option>
+              <option value="1">First year</option>
+              <option value="2">Second year</option>
+              <option value="3">Third year</option>
+              <option value="4">Forth year</option>
+            </select>
+          </div>
+
+          <div  class="input-box">
+            <span class="details">Gender</span>
+            <br/>
+            <input class="gender" type="radio" id="g1" name="color" value="male">
+            <label class="gender"  for="g1">male</label>
+            <input  class="gender" type="radio" id="g2" name="color" value="female">
+            <label  class="gender" for="g2">female</label>
+            
+          </div>
+          <div  class="button">
+          <input type="submit" value="submit">
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
