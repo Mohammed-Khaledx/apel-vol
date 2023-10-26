@@ -1,3 +1,4 @@
+window.onload = function () {
 // Select the form element
 var form = document.querySelector("form");
 
@@ -96,7 +97,7 @@ if (phone == '') {
   // Phone number cannot be blank
   isValid = false;
   alert('Phone number cannot be blank');
-} else if (!/^\d{10}$/.test(phone)) {
+} else if (!/^\d{11}$/.test(phone)) {
   // Phone number must be exactly 10 digits
   isValid = false;
   alert('Phone number must be exactly 10 digits');
@@ -107,7 +108,7 @@ if (nationalId == '') {
   // National ID cannot be blank
   isValid = false;
   alert('National ID cannot be blank');
-} else if (!/^\d{16}$/.test(nationalId)) {
+} else if (!/^\d{14}$/.test(nationalId)) {
   // National ID must be exactly 14 digits
   isValid = false;
   alert('National ID must be exactly 14 digits');
@@ -142,4 +143,4 @@ if (isValid) {
 
 });
 
-
+}
