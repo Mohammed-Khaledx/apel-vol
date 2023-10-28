@@ -9,16 +9,21 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(229, 102, 32, 1) 63%
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(229, 102, 41, 1) 100%
   );
 }
 
-.avatar{
-    display: flex;
-    justify-content: center;
+.avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar .logo {
+  height: 100px;
+  width: 100px;
 }
 
 .container {
@@ -105,11 +110,12 @@ select:valid {
   border-color: rgba(229, 102, 32, 1);
 }
 
-.gender {
-  /* !something went wrong */
-  all: unset;
-  margin: 5px;
+
+.input-box input[type="radio"]{
+  width: 1rem;
+  height: 1rem;
 }
+
 
 form .button {
   height: 45px;
@@ -151,9 +157,9 @@ form .button input:hover {
     width: 100%;
   }
 
-  form .gender {
-    width: 100%;
-  }
+  /* form .gender {
+    width: 100%; */
+  /* } */
   .container form .user-details {
     max-height: 300px;
     overflow-y: scroll;

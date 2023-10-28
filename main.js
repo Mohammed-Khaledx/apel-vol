@@ -7,14 +7,18 @@ window.onload = function () {
   form.addEventListener("submit", function (event) {
     // validation code goes here
 
-    // event.preventDefault();
+    event.preventDefault();
 
-    // Select all the input elements
-    var inputs = document.querySelectorAll("input");
+    
 
     // Select the select element and get its value
     var select = document.querySelector("select");
     academicYear = select.value;
+
+    // Select all the input elements
+    var inputs = document.querySelectorAll("input");
+
+    
     // Declare variables for storing input values
     var arabicName,
       englishName,
@@ -52,6 +56,14 @@ window.onload = function () {
             university = value;
             break;
         }
+
+      }else if (input.type == "radio") {
+
+        var value = input.value;
+        if (input.checked) {
+          gender = value;
+        }
+
       }
     }
 
@@ -80,13 +92,15 @@ window.onload = function () {
       alert("English name must contain only English letters and spaces");
     }
 
+
+  
     // Validate email
     if (email == "") {
       // Email cannot be blank
       isValid = false;
       alert("Email cannot be blank");
-      const reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    } else if (!email.match(reg)) {
+      
+    } else if (!(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email))) {
       // Email must be in a valid format
       isValid = false;
       alert("Email must be in a valid format");
@@ -97,10 +111,10 @@ window.onload = function () {
       // Phone number cannot be blank
       isValid = false;
       alert("Phone number cannot be blank");
-    } else if (!/^\d{11}$/.test(phone)) {
+    } else if (!(/^\d{11}$/.test(phone))) {
       // Phone number must be exactly 10 digits
       isValid = false;
-      alert("Phone number must be exactly 10 digits");
+      alert("Phone number must be exactly 11 digits");
     }
 
     // Validate national ID
@@ -108,7 +122,7 @@ window.onload = function () {
       // National ID cannot be blank
       isValid = false;
       alert("National ID cannot be blank");
-    } else if (!/^\d{14}$/.test(nationalId)) {
+    } else if (!(/^\d{14}$/.test(nationalId))) {
       // National ID must be exactly 14 digits
       isValid = false;
       alert("National ID must be exactly 14 digits");
@@ -128,15 +142,17 @@ window.onload = function () {
       alert("Academic year cannot be blank");
     }
 
-    // !FIXME:
+   
     // Validate gender
-    // if (gender == undefined) {
-    //   // Gender must be selected
-    //   isValid = false;
-    //   alert('Gender must be selected');
-    // }
+    if (gender == undefined) {
+      // Gender must be selected
+      isValid = false;
+      alert('Gender must be selected');
+    }
 
     if (isValid) {
+      console.log(gender);
+      console.log("All Done");
       alert("All Done");
     }
   });
