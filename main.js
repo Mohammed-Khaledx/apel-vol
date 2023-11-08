@@ -1,15 +1,13 @@
+
 window.onload = function () {
   // Select the form element
   var form = document.querySelector("form");
-
 
   // Add an event listener for the submit event
   form.addEventListener("submit", function (event) {
     // validation code goes here
 
     event.preventDefault();
-
-    
 
     // Select the select element and get its value
     var select = document.querySelector("select");
@@ -18,16 +16,16 @@ window.onload = function () {
     // Select all the input elements
     var inputs = document.querySelectorAll("input");
 
-    
     // Declare variables for storing input values
-    var arabicName,
+    var teamName,
+    arabicName,
       englishName,
       email,
       phone,
       nationalId,
       university,
-      academicYear,
-      gender;
+      faculty,
+      academicYear;
 
     // Loop through the input elements and get their values
     for (var i = 0; i < inputs.length; i++) {
@@ -37,6 +35,9 @@ window.onload = function () {
         var value = input.value.trim();
         // Assign the value to a variable based on the input name
         switch (input.name) {
+          case "teamName":
+            teamName = value;
+            break;
           case "arabicName":
             arabicName = value;
             break;
@@ -55,20 +56,25 @@ window.onload = function () {
           case "university":
             university = value;
             break;
+          case "faculty":
+            faculty = value;
+            break;
         }
 
-      }else if (input.type == "radio") {
-
-        var value = input.value;
-        if (input.checked) {
-          gender = value;
-        }
 
       }
     }
 
     // Declare a variable for storing validation status
     var isValid = true;
+
+    if (teamName == "") {
+      isValid = false;
+      alert("team name cannot be blank");
+    } else if (!/^[أ-ي\s]+$/.test(teamName)) {
+      isValid = false;
+      alert("Team name must contain only Arabic letters and spaces");
+    }
 
     // Validate arabic name
     if (arabicName == "") {
@@ -92,15 +98,14 @@ window.onload = function () {
       alert("English name must contain only English letters and spaces");
     }
 
-
-  
     // Validate email
     if (email == "") {
       // Email cannot be blank
       isValid = false;
       alert("Email cannot be blank");
-      
-    } else if (!(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email))) {
+    } else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
+    ) {
       // Email must be in a valid format
       isValid = false;
       alert("Email must be in a valid format");
@@ -111,7 +116,7 @@ window.onload = function () {
       // Phone number cannot be blank
       isValid = false;
       alert("Phone number cannot be blank");
-    } else if (!(/^\d{11}$/.test(phone))) {
+    } else if (!/^\d{11}$/.test(phone)) {
       // Phone number must be exactly 10 digits
       isValid = false;
       alert("Phone number must be exactly 11 digits");
@@ -122,10 +127,10 @@ window.onload = function () {
       // National ID cannot be blank
       isValid = false;
       alert("National ID cannot be blank");
-    } else if (!(/^\d{14}$/.test(nationalId))) {
+    } else if (!/^(2|3)\d{13}$/.test(nationalId)) {
       // National ID must be exactly 14 digits
       isValid = false;
-      alert("National ID must be exactly 14 digits");
+      alert("National ID isn't correct");
     }
 
     // Validate university
@@ -142,16 +147,17 @@ window.onload = function () {
       alert("Academic year cannot be blank");
     }
 
-   
-    // Validate gender
-    if (gender == undefined) {
-      // Gender must be selected
+    // Validate university
+    if (faculty == "") {
+      // University cannot be blank
       isValid = false;
-      alert('Gender must be selected');
+      alert("University cannot be blank");
     }
 
+
+
     if (isValid) {
-      console.log(gender);
+      // console.log(gender);
       console.log("All Done");
       alert("All Done");
     }

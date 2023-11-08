@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="master.css" />
+    <script src="main.js"></script>
+    <title>APEL</title>
+  </head>
+  <body>
+    <div class="container">
+      <a href="#" class="avatar">
+        <img src="apel.svg" alt="" class="logo" />
+      </a>
+      <div class="title">انضم الى المسابقة</div>
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">اسم الفريق</span>
+            <input
+              type="text"
+              name="teamName"
+              placeholder="ادخل اسم الفريق"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details">الاسم باللغة العربية</span>
+            <input
+              type="text"
+              name="arabicName"
+              placeholder="ادخل اسمك بالعربي"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details">الاسم باللغة الانجليزية</span>
+            <input
+              type="text"
+              name="englishName"
+              placeholder="ادخل اسمك بالأنجليزي"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details">البريد الالكتروني</span>
+            <input
+              type="text"
+              name="email"
+              placeholder="ادخل بريدك الاكتروني"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details">رقم الهاتف</span>
+            <input
+              type="text"
+              name="phone"
+              placeholder="ادخل رقم الهاتف"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details">الرقم القومي</span>
+            <input
+              type="text"
+              name="nationalId"
+              placeholder="ادخل رقمك القومي"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details">الجامعة</span>
+            <input
+              type="text"
+              name="university"
+              placeholder="ادخل اسم الجمعة"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details">الكلية</span>
+            <input
+              type="text"
+              name="faculty"
+              placeholder="ادخل اسم الكلية"
+              required
+            />
+          </div>
+
+          
+
+          <div class="input-box">
+            <span class="details">السنة الدراسية</span>
+
+            <select name="academicYear" id="">
+              <option value="">--اختر شيئا--</option>
+              <option value="0">اعدادي</option>
+              <option value="1">السنة الاولى</option>
+              <option value="2">السنة الثانية</option>
+              <option value="3">السنة الثالثة</option>
+              <option value="4">السنة الرابعة</option>
+            </select>
+          </div>
+
+
+          <div class="button">
+            <input type="submit" name="submit" value="سجل الان" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
