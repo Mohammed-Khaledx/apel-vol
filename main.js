@@ -1,4 +1,3 @@
-
 window.onload = function () {
   // Select the form element
   var form = document.querySelector("form");
@@ -18,7 +17,7 @@ window.onload = function () {
 
     // Declare variables for storing input values
     var teamName,
-    arabicName,
+      arabicName,
       englishName,
       email,
       phone,
@@ -60,8 +59,6 @@ window.onload = function () {
             faculty = value;
             break;
         }
-
-
       }
     }
 
@@ -154,10 +151,16 @@ window.onload = function () {
       alert("University cannot be blank");
     }
 
-
-
     if (isValid) {
-      // console.log(gender);
+      // extracting the gender from national id by checking second digit from right
+      gender = Math.trunc((nationalId % 100) / 10) % 2;
+
+      if (gender) {
+        console.log("male");
+      } else {
+        console.log("female");
+      }
+
       console.log("All Done");
       alert("All Done");
     }
